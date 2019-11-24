@@ -3,19 +3,21 @@ package dao;
 import model.Document;
 
 import java.sql.Connection;
+import java.sql.SQLException;
 import java.util.List;
 
 public class DocumentDAOImp implements DAO<Document> {
-    private boolean checkId(String id, Connection conn) {
-        var sql = "SELECT * FROM Document WHERE ID = ?";
-        try{
+    public boolean isIdValid(String id, String tableName) {
+        var sql = "SELECT ID FROM " + tableName + " WHERE ID = ?";
+        var conn = DBConnection.getInstance().getConnection();
+        try {
             var prepare = conn.prepareStatement(sql);
             prepare.setString(1, id);
             var result = prepare.executeQuery();
             if(result.next()) {
                 return false;
             }
-        }catch (Exception e) {
+        } catch (SQLException e) {
             e.printStackTrace();
         }
         return true;
@@ -23,23 +25,19 @@ public class DocumentDAOImp implements DAO<Document> {
 
     @Override
     public void add(Document document) {
-        var sql = "INSERT INTO dbo.Document(ID, Title, PublishedYear, " +
-                "Quantity, Author) VALUES (?, ?, ?, ?, ?)";
         var conn = DBConnection.getInstance().getConnection();
-        if(checkId(document.getId(), conn)) { // this.checkId(document.getId(), conn)
-            try {
-                var prepare = conn.prepareStatement(sql);
-                prepare.setString(1, document.getId());
-                prepare.setString(2, document.getTitle());
-                prepare.setInt(3, document.getPublishedYear());
-                prepare.setInt(4, document.getQuantity());
-                prepare.setString(5, document.getAuthor());
-                prepare.executeUpdate();
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        } else {
-            System.out.println("This ID Already exist!");
+        var sql = "INSERT INTO dbo.Document(ID, Title, PublishedYear, Quantity, Author)"
+                + " VALUES(?, ?, ?, ?, ?);";
+        try {
+            var prepare = conn.prepareStatement(sql);
+            prepare.setString(1, document.getId());
+            prepare.setString(2, document.getTitle());
+            prepare.setInt(3, document.getPublishedYear());
+            prepare.setInt(4, document.getQuantity());
+            prepare.setString(5, document.getAuthor());
+            prepare.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
     }
 

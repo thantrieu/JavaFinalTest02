@@ -12,6 +12,8 @@ public class Main {
     public static void main(String[] args) {
        var bookCtr = new BookCtrImp();
        var book = bookCtr.addFromKeyBoard();
+       var bookDAOImp =  new BookDAOImp();
+       bookDAOImp.add(book);
         System.out.println(book);
     }
 

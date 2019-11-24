@@ -1,5 +1,6 @@
 package controller;
 
+import dao.DocumentDAOImp;
 import model.Document;
 
 import java.util.Scanner;
@@ -27,6 +28,15 @@ public class DocumentCtrImp implements Ctr<Document> {
             System.out.println("Nhập mã tài liệu: (DOC_xxxxxx; ví dụ: DOC_012345)");
             id = scanner.nextLine();
         } while(!checkID(id));
+        // kiem tra ma da ton tai trong db chua?
+        var documentDAOImp = new DocumentDAOImp();
+        var isIdValid = documentDAOImp.isIdValid(id, "dbo.Document");
+        while(!isIdValid) {
+            System.out.println("Mã tài liệu đã tồn tại. Nhập mã khác!");
+            System.out.println("Nhập mã tài liệu: (DOC_xxxxxx; ví dụ: DOC_012345)");
+            id = scanner.nextLine();
+            isIdValid = documentDAOImp.isIdValid(id, "dbo.Document");
+        }
         System.out.println("Tiêu đề: ");
         var title = scanner.nextLine();
         System.out.println("Tác giả: ");

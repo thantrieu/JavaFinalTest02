@@ -1,5 +1,6 @@
 package controller;
 
+import dao.BookDAOImp;
 import model.Book;
 import model.Document;
 
@@ -25,8 +26,16 @@ public class BookCtrImp extends DocumentCtrImp {
             System.out.println("Nhập mã sách dạng DCMT_xxxxxx, vd: DCMT_123456");
             bId = scanner.nextLine();
         }
+        var bookDaoImp = new BookDAOImp();
+        var isIdValid = bookDaoImp.isIdValid(bId, "dbo.Book");
+        while(!isIdValid) {
+            System.out.println("Mã sách đã tồn tại, nhập mã khác!");
+            System.out.println("Nhập mã sách dạng DCMT_xxxxxx, vd: DCMT_123456");
+            bId = scanner.nextLine();
+            isIdValid = bookDaoImp.isIdValid(bId, "dbo.Book");
+        }
         var choice = 0;
-        String kinds[] = {"Khoa học", "Nghệ thuật", "Kinh tế", "Ẩm thực", "CNTT"};
+        String kinds[] = {"", "Khoa học", "Nghệ thuật", "Kinh tế", "Ẩm thực", "CNTT"};
         do{
             System.out.println("Nhập loại sách: ");
             System.out.println("1. Khoa học");
