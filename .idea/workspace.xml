@@ -2,9 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ae97dfb1-14c7-4e1d-b9d9-dc5167b275a4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FinalTestV2/controller/BookCtrImp.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FinalTestV2/controller/BookCtrImp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FinalTestV2/controller/DocumentCtrImp.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FinalTestV2/controller/DocumentCtrImp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FinalTestV2/model/Book.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FinalTestV2/model/Book.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FinalTestV2/view/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FinalTestV2/view/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/BookCtrImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/BookCtrImp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/DocumentCtrImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/DocumentCtrImp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Book.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/Main.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -104,5 +110,19 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/controller/BookCtrImp.java</url>
+          <line>19</line>
+          <properties class="controller.BookCtrImp" method="addFromKeyBoard">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

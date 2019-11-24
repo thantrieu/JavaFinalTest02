@@ -10,21 +10,9 @@ import java.sql.SQLException;
 
 public class Main {
     public static void main(String[] args) {
-       var connection = MConnection.getInstance().getConnection();
-       var sql = "SELECT * FROM dbo.Document";
-        try {
-            var result = connection.prepareStatement(sql);
-            var resultSet = result.executeQuery();
-            while(resultSet.next()) {
-                System.out.println(resultSet.getString("ID"));
-                System.out.println(resultSet.getString("Title"));
-                System.out.println(resultSet.getInt("PublishedYear"));
-                System.out.println(resultSet.getInt("Quantity"));
-                System.out.println(resultSet.getString("Author"));
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+       var bookCtr = new BookCtrImp();
+       var book = bookCtr.addFromKeyBoard();
+        System.out.println(book);
     }
 
     private static void showResult(ResultSet resultSet) {
