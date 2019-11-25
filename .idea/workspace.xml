@@ -3,7 +3,15 @@
   <component name="ChangeListManager">
     <list default="true" id="ae97dfb1-14c7-4e1d-b9d9-dc5167b275a4" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/DocumentCtrImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/DocumentCtrImp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dao/BillDAOImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/BillDAOImp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dao/BookDAOImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/BookDAOImp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dao/BookStateDAOImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/BookStateDAOImp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dao/BorrowingDAOImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/BorrowingDAOImp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dao/DAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/DAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dao/DocumentDAOImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/DocumentDAOImp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dao/EmployeeDAOImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/EmployeeDAOImp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dao/PersonDAOImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/PersonDAOImp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dao/ReaderDAOImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/ReaderDAOImp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/Main.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />

@@ -16,8 +16,8 @@ public class BorrowingDAOImp implements DAO<Borrowing> {
     }
 
     @Override
-    public void remove(String id) {
-
+    public boolean remove(String id) {
+        return  false;
     }
 
     @Override

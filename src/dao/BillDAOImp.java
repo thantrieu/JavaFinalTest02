@@ -17,8 +17,8 @@ public class BillDAOImp implements DAO<Bill> {
     }
 
     @Override
-    public void remove(String id) {
-
+    public boolean remove(String id) {
+        return false;
     }
 
     @Override

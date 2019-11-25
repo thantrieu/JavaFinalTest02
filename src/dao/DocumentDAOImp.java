@@ -47,8 +47,20 @@ public class DocumentDAOImp implements DAO<Document> {
     }
 
     @Override
-    public void remove(String id) {
-
+    public boolean remove(String id) {
+        var sql = "DELETE FROM dbo.Document WHERE ID = ?";
+        var conn = DBConnection.getInstance().getConnection();
+        try {
+            var prepare = conn.prepareStatement(sql);
+            prepare.setString(1, id);
+            var result = prepare.executeUpdate();
+            if(result > 0) {
+                return true;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
     }
 
     @Override

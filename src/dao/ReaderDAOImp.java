@@ -17,8 +17,9 @@ public class ReaderDAOImp extends PersonDAOImp {
     }
 
     @Override
-    public void remove(String id) {
+    public boolean remove(String id) {
         super.remove(id);
+        return false;
     }
 
     @Override

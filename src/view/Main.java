@@ -3,6 +3,7 @@ package view;
 import controller.BookCtrImp;
 import dao.BookDAOImp;
 import dao.DBConnection;
+import dao.DocumentDAOImp;
 import dao.MConnection;
 
 import java.sql.ResultSet;
@@ -22,7 +23,19 @@ public class Main {
     }
 
     public static void removeBook() {
-
+        //TODO: put your code here
+        var scanner = new Scanner(System.in);
+        System.out.println("Nhập mã tài liệu cần xóa: ");
+        var id = scanner.nextLine();
+        var bookDAOImp = new BookDAOImp();
+        var result = bookDAOImp.remove(id);
+        var documentDAOImp = new DocumentDAOImp();
+        var result2 = documentDAOImp.remove(id);
+        if(result && result2) {
+            System.out.println("Xoá sách thành công!");
+        } else {
+            System.out.println("Sách không tồn tại hoặc sai mã sách!");
+        }
     }
 
     public static void searchBook() {

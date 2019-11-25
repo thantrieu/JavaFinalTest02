@@ -32,8 +32,20 @@ public class BookDAOImp extends DocumentDAOImp {
     }
 
     @Override
-    public void remove(String id) {
-        super.remove(id);
+    public boolean remove(String id) {
+        var sql = "DELETE FROM dbo.Book WHERE ID = ?";
+        var conn = DBConnection.getInstance().getConnection();
+        try {
+            var prepare = conn.prepareStatement(sql);
+            prepare.setString(1, id);
+            var result = prepare.executeUpdate();
+            if(result > 0) {
+                return true;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
     }
 
     @Override

@@ -16,8 +16,8 @@ public class PersonDAOImp implements DAO<Person> {
     }
 
     @Override
-    public void remove(String id) {
-
+    public boolean remove(String id) {
+        return false;
     }
 
     @Override

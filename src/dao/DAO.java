@@ -7,7 +7,7 @@ public interface DAO<T> {
 
     void edit(String id);
 
-    void remove(String id);
+    boolean remove(String id);
 
     T findById(String id);
 
