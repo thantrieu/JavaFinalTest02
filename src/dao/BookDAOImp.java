@@ -27,8 +27,8 @@ public class BookDAOImp extends DocumentDAOImp {
     }
 
     @Override
-    public void edit(String id) {
-        super.edit(id);
+    public boolean edit(Document document) {
+        return super.edit(document);
     }
 
     @Override

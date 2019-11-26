@@ -42,8 +42,21 @@ public class DocumentDAOImp implements DAO<Document> {
     }
 
     @Override
-    public void edit(String id) {
-
+    public boolean edit(Document document) {
+        var sql = "UPDATE dbo.Document SET Title = ? WHERE ID = ?";
+        var conn = DBConnection.getInstance().getConnection();
+        try {
+            var prepare = conn.prepareStatement(sql);
+            prepare.setString(1, document.getTitle());
+            prepare.setString(2, document.getId());
+            var result = prepare.executeUpdate();
+            if(result > 0) {
+                return true;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
     }
 
     @Override

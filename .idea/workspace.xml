@@ -2,7 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ae97dfb1-14c7-4e1d-b9d9-dc5167b275a4" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FinalTestV2/dao/BillDAOImp.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FinalTestV2/dao/BillDAOImp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FinalTestV2/dao/BookDAOImp.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FinalTestV2/dao/BookDAOImp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FinalTestV2/dao/BookStateDAOImp.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FinalTestV2/dao/BookStateDAOImp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FinalTestV2/dao/BorrowingDAOImp.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FinalTestV2/dao/BorrowingDAOImp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FinalTestV2/dao/DAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FinalTestV2/dao/DAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FinalTestV2/dao/DocumentDAOImp.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FinalTestV2/dao/DocumentDAOImp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FinalTestV2/dao/EmployeeDAOImp.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FinalTestV2/dao/EmployeeDAOImp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FinalTestV2/dao/PersonDAOImp.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FinalTestV2/dao/PersonDAOImp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FinalTestV2/dao/ReaderDAOImp.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FinalTestV2/dao/ReaderDAOImp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FinalTestV2/view/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FinalTestV2/view/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/dao/BillDAOImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/BillDAOImp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/dao/BookDAOImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/BookDAOImp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/dao/BookStateDAOImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/BookStateDAOImp.java" afterDir="false" />

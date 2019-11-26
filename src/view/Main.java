@@ -5,6 +5,7 @@ import dao.BookDAOImp;
 import dao.DBConnection;
 import dao.DocumentDAOImp;
 import dao.MConnection;
+import model.Book;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -19,7 +20,24 @@ public class Main {
     }
 
     public static void editBook() {
+        var scanner = new Scanner(System.in);
+        System.out.println("Nhập mã sách cần sửa: ");
+        var id = scanner.nextLine();
+        System.out.println("Nhập tên mới: ");
+        var newTitle = scanner.nextLine();
+        var bookDAOImp= new BookDAOImp();
+        var book = new Book(id, "");
+        book.setTitle(newTitle);
+        var result = bookDAOImp.edit(book);
+        if(result) {
+            showMessage("Cập nhật thành công!");
+        } else {
+            showMessage("Cập nhật thất bại! Kiểm tra lại mã tài liệu!");
+        }
+    }
 
+    public static void showMessage(String smg) {
+        System.out.println(smg);
     }
 
     public static void removeBook() {

@@ -11,8 +11,8 @@ public class PersonDAOImp implements DAO<Person> {
     }
 
     @Override
-    public void edit(String id) {
-
+    public boolean edit(Person p) {
+        return false;
     }
 
     @Override

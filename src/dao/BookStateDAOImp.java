@@ -11,8 +11,8 @@ public class BookStateDAOImp implements DAO<BookState> {
     }
 
     @Override
-    public void edit(String id) {
-
+    public boolean edit(BookState bs) {
+        return false;
     }
 
     @Override

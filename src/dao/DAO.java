@@ -5,7 +5,7 @@ import java.util.List;
 public interface DAO<T> {
     void add(T t);
 
-    void edit(String id);
+    boolean edit(T t);
 
     boolean remove(String id);
 

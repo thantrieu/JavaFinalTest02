@@ -11,8 +11,8 @@ public class EmployeeDAOImp extends PersonDAOImp {
     }
 
     @Override
-    public void edit(String id) {
-        super.edit(id);
+    public boolean edit(Person p) {
+        return super.edit(p);
     }
 
     @Override

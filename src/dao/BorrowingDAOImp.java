@@ -11,8 +11,8 @@ public class BorrowingDAOImp implements DAO<Borrowing> {
     }
 
     @Override
-    public void edit(String id) {
-
+    public boolean edit(Borrowing br) {
+        return false;
     }
 
     @Override
