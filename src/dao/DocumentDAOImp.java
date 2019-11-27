@@ -2,8 +2,10 @@ package dao;
 
 import model.Document;
 
+import javax.print.Doc;
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class DocumentDAOImp implements DAO<Document> {
@@ -83,7 +85,26 @@ public class DocumentDAOImp implements DAO<Document> {
 
     @Override
     public List<Document> findByName(String name) {
-        return null;
+        var docs = new ArrayList<Document>();
+        var sql = "SELECT * FROM dbo.Document WHERE Title LIKE ?";
+        var conn = DBConnection.getInstance().getConnection();
+        try {
+            var prepare = conn.prepareStatement(sql);
+            prepare.setString(1, "%" + name + "%");
+            var result = prepare.executeQuery();
+            while(result.next()) {
+                var id = result.getString("ID");
+                var title = result.getString("Title");
+                var year = result.getInt("PublishedYear");
+                var quan = result.getInt("Quantity");
+                var author = result.getString("Author");
+                var doc = new Document(id, title, year, author, quan);
+                docs.add(doc);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return docs;
     }
 
     @Override

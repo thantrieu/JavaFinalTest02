@@ -6,9 +6,11 @@ import dao.DBConnection;
 import dao.DocumentDAOImp;
 import dao.MConnection;
 import model.Book;
+import model.Document;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
@@ -25,11 +27,11 @@ public class Main {
         var id = scanner.nextLine();
         System.out.println("Nhập tên mới: ");
         var newTitle = scanner.nextLine();
-        var bookDAOImp= new BookDAOImp();
+        var bookDAOImp = new BookDAOImp();
         var book = new Book(id, "");
         book.setTitle(newTitle);
         var result = bookDAOImp.edit(book);
-        if(result) {
+        if (result) {
             showMessage("Cập nhật thành công!");
         } else {
             showMessage("Cập nhật thất bại! Kiểm tra lại mã tài liệu!");
@@ -49,7 +51,7 @@ public class Main {
         var result = bookDAOImp.remove(id);
         var documentDAOImp = new DocumentDAOImp();
         var result2 = documentDAOImp.remove(id);
-        if(result && result2) {
+        if (result && result2) {
             System.out.println("Xoá sách thành công!");
         } else {
             System.out.println("Sách không tồn tại hoặc sai mã sách!");
@@ -57,13 +59,18 @@ public class Main {
     }
 
     public static void searchBook() {
-
+        var scanner = new Scanner(System.in);
+        System.out.println("Nhập tên sách cần tìm: ");
+        var title = scanner.nextLine();
+        var bookDAOImp = new BookDAOImp();
+        var result = bookDAOImp.findByName(title);
+        showResult(result);
     }
 
     public static void manageBook() {
         var choice = 0;
         var scanner = new Scanner(System.in);
-        do{
+        do {
             System.out.println("=========== CHỨC NĂNG QUẢN LÝ SÁCH ===========");
             System.out.println("1. Thêm mới một sách vào CSDL.");
             System.out.println("2. Sửa một sách theo mã sách.");
@@ -79,7 +86,7 @@ public class Main {
                 case 1:
                     addBook();
                     break;
-                case 2 :
+                case 2:
                     editBook();
                     break;
                 case 3:
@@ -92,7 +99,7 @@ public class Main {
                     System.out.println("Sai chức năng. Hãy chọn lại!");
                     break;
             }
-        } while(choice != 0);
+        } while (choice != 0);
     }
 
     public static void manageReader() {
@@ -140,18 +147,13 @@ public class Main {
         } while (choice != 0);
     }
 
-    private static void showResult(ResultSet resultSet) {
-        try {
-            while (resultSet.next()) {
-                var id = resultSet.getString("ID");
-                var title = resultSet.getString("Title");
-                var pYear = resultSet.getInt("PublishedYear");
-                var quan = resultSet.getInt("Quantity");
-                var author = resultSet.getString("Author");
-                System.out.println(id + " " + title + " " + pYear + " " + quan + " " + author);
+    private static void showResult(List<Document> books) {
+        if (books.size() > 0) {
+            for (var b : books) {
+                System.out.println(b);
             }
-        } catch (SQLException e) {
-            e.printStackTrace();
+        } else {
+            System.out.println("Không có kết quả!");
         }
     }
 }
